@@ -6,6 +6,17 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>Bonjour a tous , {{ nom }} </h1>
+    <h1>Bonjour a tous , {{ nom }} vous avez {{ age }} ans</h1>
+    <h2>Vous etes : </h2>
+    {% if age >= 18 %}
+        <p>Un adulte</p>
+    {% else %}
+        <p>Un Mineur</p>
+    {% endif %}
+    <h1>Les classes : </h1>
+    {% for object in classes %}
+        <p>{{ object }}</p>
+    {% endfor %}
+    
 </body>
 </html>

@@ -3,9 +3,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Produit</title>
 </head>
 <body>
-    <h1>Page Produit...</h1>
+    <h1>Liste des Produits </h1>
+
+    <div>
+        <table border="1">
+            <thead>
+                <tr>NOM</tr>
+                <tr>PRIX</tr>
+                <tr>DESCRIPTION</tr>
+                <tr>IMAGE</tr>
+            </thead>
+            <tbody>
+                {% for object in produits %}
+                <tr>
+                    <td>{{ object.nom }}</td>
+                    <td>{{ object.prix }}</td>
+                    <td>{{ object.description }}</td>
+                    {% if object.image %}
+                        <td><img src="{{ object.image }}" alt="image" height="40" width="40"></td>
+                    {% else %}
+                        <td>Pas d'image</td>
+                    {% endif %}
+                    
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+    
 </body>
 </html>
